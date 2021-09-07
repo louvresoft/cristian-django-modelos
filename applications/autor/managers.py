@@ -27,3 +27,11 @@ class AutorManager(models.Manager):
             nombre__icontains=kword
         ).exclude(edad__exact=50)
         return resultado
+
+    def buscar_autor4(self, kword):
+        # mayor que 50
+        resultado = self.filter(
+            edad__gt=20,  # mayor que
+            edad__lt=60  # menor que
+        )
+        return resultado
